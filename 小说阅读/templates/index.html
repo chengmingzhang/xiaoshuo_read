@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            width: 100%;
+            height: 220px;
+            background-repeat: no-repeat;
+            {#background: url("{{ url_for('static', filename='bg.jpg') }}");#}
+            background: black;
+            background-size: 100%;
+        }
+        h1{
+            line-height: 220px;
+            color: white;
+            margin-top: 0;
+            text-align: center;
+        }
+        .content{
+            width: 600px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>重生之傲天逍遥</h1>
+</div>
+<div class="content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>章节列表</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for chapter in all_chapter %}
+                <tr>
+                    <td><a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
