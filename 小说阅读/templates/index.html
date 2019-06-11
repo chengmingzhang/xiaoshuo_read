@@ -23,10 +23,31 @@
             margin-top: 0;
             text-align: center;
         }
-        .content{
-            width: 600px;
-            margin: 0 auto;
+        .content {
+            border: 2px solid #88C6E5;
+            overflow: hidden;
+            width: 976px;
+            margin: 10px auto;
         }
+        .content dl {
+            float: left;
+            overflow: hidden;
+            padding-bottom: 1px;
+            margin: auto;
+        }
+        .content dd {
+            border-bottom: 1px dashed #CCC;
+            display: inline;
+            float: left;
+            height: 25px;
+            line-height: 200%;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-align: left;
+            text-indent: 10px;
+            vertical-align: middle;
+            width: 33%;
+}
 
     </style>
 </head>
@@ -35,20 +56,27 @@
     <h1>重生之傲天逍遥</h1>
 </div>
 <div class="content">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>章节列表</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for chapter in all_chapter %}
-                <tr>
-                    <td><a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a></td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <dl>
+         {% for chapter in all_chapter %}
+            <dd>
+                <a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a>
+            </dd>
+        {% endfor %}
+    </dl>
+{#    <table class="table">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>章节列表</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#            {% for chapter in all_chapter %}#}
+{#                <tr>#}
+{#                    <td><a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a></td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
 </div>
 </body>
 </html>

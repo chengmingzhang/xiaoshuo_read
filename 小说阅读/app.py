@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     id = request.args.get('id')
-    conn = sqlite3.connect(r"C:\Users\Administrator\PycharmProjects\小说阅读\cszatxy.db")
+    conn = sqlite3.connect(r"C:\Users\Administrator\PycharmProjects\xiaoshuo_read\小说阅读\cszatxy.db")
     cursor = conn.cursor()
     sql = 'select id,title,content from atxy'
     rows = cursor.execute(sql)
@@ -22,7 +22,7 @@ def index():
 
 @app.route('/show/')
 def show():
-    conn = sqlite3.connect(r"C:\Users\Administrator\PycharmProjects\小说阅读\cszatxy.db")
+    conn = sqlite3.connect(r"C:\Users\Administrator\PycharmProjects\xiaoshuo_read\小说阅读\cszatxy.db")
     cursor = conn.cursor()
     sql = 'select id,title,content from atxy where id=%s' % request.args.get('id')
     rows = cursor.execute(sql)
@@ -35,4 +35,4 @@ def show():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug='ON')
