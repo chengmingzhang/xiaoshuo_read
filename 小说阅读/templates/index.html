@@ -22,12 +22,6 @@
             background-size: 100%;
             margin: 0 auto;
         }
-        h1{
-            line-height: 220px;
-            color: white;
-            margin-top: 0;
-            text-align: center;
-        }
         .content {
             border: 2px solid #88C6E5;
             overflow: hidden;
@@ -49,16 +43,15 @@
             margin-bottom: 5px;
             overflow: hidden;
             text-align: left;
-            text-indent: 10px;
+            text-indent: 75px;
             vertical-align: middle;
-            width: 33%;
+            width: 20%;
         }
         .nav{
             width: 980px;
             height: 40px;
             overflow: hidden;
             margin: 10px auto;
-
         }
 
     </style>
@@ -73,14 +66,19 @@
         <li role="presentation"  class="active"><a href="#">武侠</a></li>
         <li role="presentation"  class="active"><a href="#">恐怖</a></li>
         <li role="presentation" class="active"><a href="#">科幻</a></li>
-        <li role="presentation" class="active"><a href="#">网游</a></li>
+{#        <li role="presentation" class="active"><a href="#">网游</a></li>#}
     </ul>
 </div>
 <div class="content">
     <dl>
-         {% for chapter in all_chapter %}
+{#         {% for chapter in all_chapter %}#}
+{#            <dd>#}
+{#                <a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a>#}
+{#            </dd>#}
+{#        {% endfor %}#}
+        {% for article in articles %}
             <dd>
-                <a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a>
+                <a href="#">{{ article['name'] }}</a>
             </dd>
         {% endfor %}
     </dl>
