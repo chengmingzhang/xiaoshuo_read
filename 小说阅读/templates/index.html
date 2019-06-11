@@ -9,13 +9,18 @@
             padding: 0;
             margin: 0;
         }
+        body {
+            background-color: rgb(233, 250, 255);
+            color: rgb(85, 85, 85);
+            margin: 0px auto;
+        }
         .header{
-            width: 100%;
+            width: 980px;
             height: 220px;
             background-repeat: no-repeat;
-            {#background: url("{{ url_for('static', filename='bg.jpg') }}");#}
-            background: black;
+            background: url("{{ url_for('static', filename='logo.jpg') }}");
             background-size: 100%;
+            margin: 0 auto;
         }
         h1{
             line-height: 220px;
@@ -53,7 +58,6 @@
 </head>
 <body>
 <div class="header">
-    <h1>重生之傲天逍遥</h1>
 </div>
 <div class="content">
     <dl>
@@ -63,20 +67,6 @@
             </dd>
         {% endfor %}
     </dl>
-{#    <table class="table">#}
-{#        <thead>#}
-{#            <tr>#}
-{#                <th>章节列表</th>#}
-{#            </tr>#}
-{#        </thead>#}
-{#        <tbody>#}
-{#            {% for chapter in all_chapter %}#}
-{#                <tr>#}
-{#                    <td><a href="/show/?id={{ chapter['id'] }}">{{ chapter['title'] }}</a></td>#}
-{#                </tr>#}
-{#            {% endfor %}#}
-{#        </tbody>#}
-{#    </table>#}
 </div>
 </body>
 </html>
